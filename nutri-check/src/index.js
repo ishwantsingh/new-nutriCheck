@@ -10,6 +10,7 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 import rootReducer from "./state/reducers/rootReducer";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const store = createStore(
   rootReducer,
@@ -28,7 +29,9 @@ const store = createStore(
 store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>,
     document.getElementById("root")
   );
