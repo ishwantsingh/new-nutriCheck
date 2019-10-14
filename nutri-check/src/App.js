@@ -7,14 +7,26 @@ import { compose } from "redux";
 
 import Options from "./components/Options";
 import Headbar from "./components/layout/Headbar";
+import DishList from "./components/dishes/DishList";
 
 class App extends React.Component {
   render() {
+    const { dishes, auth } = this.props;
     return (
       <div>
         <Headbar />
         <div>
           <Route exact path="/" component={Options} />
+        </div>
+        <div>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <DishList {...props} dishes={dishes} auth={auth} />
+            )}
+          />
+          {console.log(dishes)}
         </div>
       </div>
     );
@@ -35,7 +47,6 @@ class App extends React.Component {
 // )(App);
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile,
