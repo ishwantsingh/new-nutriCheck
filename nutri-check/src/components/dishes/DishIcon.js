@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 import sampleFood from "../../images/sample-food.jpg";
 
 const StyledDiv = styled.div`
@@ -55,20 +55,24 @@ export default function DishIcon(props) {
     return (
       <StyledDiv>
         {/* {console.log("boo3", props)} */}
-
-        <div className="row dish-card">
-          <div className="col s12 m6 dish-card-div">
-            <div className="card">
-              <div className="card-image">
-                <img src={sampleFood} />
-              </div>
-              <div className="card-content">
-                <p>{props.dish.name}</p>
+        <Link
+          to={"/recipe/" + props.dish.id}
+          key={props.dish.id}
+          className="container"
+        >
+          <div className="row dish-card">
+            <div className="col s12 m6 dish-card-div">
+              <div className="card">
+                <div className="card-image">
+                  <img src={sampleFood} />
+                </div>
+                <div className="card-content">
+                  <p>{props.dish.name}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
+        </Link>
         {/* <div>{props.dish.name}</div> */}
         {/* <div>{props.dish.steps}</div> */}
         {/* <div>{props.dish.ing}</div> */}

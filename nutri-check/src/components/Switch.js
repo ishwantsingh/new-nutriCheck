@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  border: 2px solid #009688;
+  border: 2px solid #764abc;
   border-radius: 10px;
   padding: 5px 20px;
   margin: 0 auto;

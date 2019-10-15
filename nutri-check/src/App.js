@@ -8,6 +8,7 @@ import { compose } from "redux";
 import Options from "./components/Options";
 import Headbar from "./components/layout/Headbar";
 import DishList from "./components/dishes/DishList";
+import Recipe from "./components/dishes/Recipe";
 
 class App extends React.Component {
   render() {
@@ -25,6 +26,13 @@ class App extends React.Component {
             render={props => (
               <DishList {...props} dishes={dishes} auth={auth} />
             )}
+          />
+        </div>
+        <div>
+          <Route
+            exact
+            path="/recipe/:id"
+            render={props => <Recipe {...props} dishes={dishes} />}
           />
         </div>
       </div>

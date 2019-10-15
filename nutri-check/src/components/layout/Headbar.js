@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
   align-items: center;
   margin-bottom: 15px;
   height: 53px;
-  background-color: #009688;
+  background-color: #764abc;
   a {
     margin-right: 3%;
     margin-left: 5.8%;
