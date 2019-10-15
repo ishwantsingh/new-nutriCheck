@@ -22,6 +22,10 @@ const StyledDiv = styled.div`
       .card {
         width: 100%;
         height: 25rem;
+        .container-all {
+          margin: 0 8rem;
+          overflow: scroll;
+        }
         .img-1 {
           height: 17rem;
         }
@@ -84,7 +88,7 @@ export default function DishIcon(props) {
                 modal
                 closeOnDocumentClick
               >
-                <div>
+                <div className="container-all">
                   {console.log(props.dish.link)}
                   <h5>{props.dish.name}</h5>
                   <img src={props.dish.image} className="img-2" />
