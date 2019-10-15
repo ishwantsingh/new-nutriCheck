@@ -3,12 +3,24 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-const StyledDiv = styled.div``;
+const StyledDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  padding: 10px;
+`;
 
-const DishIcon = props => {
-  console.log(props, "icon");
-  return <StyledDiv></StyledDiv>;
-};
+export default function DishIcon(props) {
+  return (
+    <StyledDiv>
+      {console.log("boo3", props)}
+
+      <div>{props.dish.name}</div>
+      {/* <div>{props.dish.steps}</div> */}
+      {/* <div>{props.dish.ing}</div> */}
+    </StyledDiv>
+  );
+}
 
 // const mapDispatchToProps = dispatch => {
 //     return {
@@ -21,5 +33,3 @@ const DishIcon = props => {
 //     null,
 //     mapDispatchToProps
 //   )(PostList);
-
-export default DishIcon;

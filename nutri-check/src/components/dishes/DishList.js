@@ -10,20 +10,45 @@ const StyledListDiv = styled.div``;
 const DishList = props => {
   console.log(props.dishes);
 
-  function func1(dishes) {
-    dishes &&
-      dishes.map(dish => {
-        return <DishIcon dish={dish} key={dish.id} />;
-      });
-  }
+  //   function func1(dishes) {
+  //     console.log("boo");
+  //     dishes &&
+  //       dishes.map(dish => {
+  //         console.log("boo2", dish.id);
+  //         return <DishIcon dish={dish} key={dish.id} />;
+  //       });
+  //   }
 
-  return (
-    <StyledListDiv>
-      <div>Dishes</div>
-      {func1(props.dishes)}
-    </StyledListDiv>
-  );
+  if (props.dishes) {
+    return (
+      <StyledListDiv>
+        <div>Dishes</div>
+        {/* {func1(props.dishes)} */}
+        {props.dishes &&
+          props.dishes.map(dish => {
+            console.log("boo2", dish.id);
+            return <DishIcon dish={dish} key={dish.id} />;
+          })}
+      </StyledListDiv>
+    );
+  } else {
+    return (
+      <StyledListDiv className="container center">
+        <div className="progress">
+          <div className="indeterminate" />
+        </div>
+      </StyledListDiv>
+    );
+  }
 };
+
+//   return (
+//     <StyledListDiv>
+//       <div>Dishes</div>
+//       {func1(props.dishes)}
+//     </StyledListDiv>
+//   );
+// };
 // function mapStateToProps(state) {
 //   return { dishes: state.dishes, auth: state.firebase.auth };
 // }

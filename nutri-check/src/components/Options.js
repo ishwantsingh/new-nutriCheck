@@ -33,7 +33,7 @@ class Options extends React.Component {
   };
   handleChange = e => {
     // console.log("boo", e.target.id);
-    console.log(`${e.target.id}`, this.state[e.target.id]);
+    // console.log(`${e.target.id}`, this.state[e.target.id]);
     // console.log(document.writeln(this.state.fat));
     this.state[e.target.id] === "low"
       ? this.setState({
@@ -45,7 +45,7 @@ class Options extends React.Component {
 
     // this.setState({ [e.target.id]: "high" });
 
-    console.log(`${e.target.id}`, this.state[e.target.id]);
+    // console.log(`${e.target.id}`, this.state[e.target.id]);
   };
 
   handleSubmit = e => {

@@ -26,7 +26,6 @@ class App extends React.Component {
               <DishList {...props} dishes={dishes} auth={auth} />
             )}
           />
-          {console.log(dishes)}
         </div>
       </div>
     );
