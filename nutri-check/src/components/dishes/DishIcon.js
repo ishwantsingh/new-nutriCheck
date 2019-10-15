@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import sampleFood from "../../images/sample-food.jpg";
 import Popup from "reactjs-popup";
 import Recipe from "./Recipe";
+import Ingre from "./Ingre";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -21,6 +22,9 @@ const StyledDiv = styled.div`
       .card {
         width: 100%;
         height: 25rem;
+        a {
+          margin: 0 10px;
+        }
       }
     }
   }
@@ -81,11 +85,10 @@ export default function DishIcon(props) {
               >
                 <div>
                   {console.log(link)}
-
                   <h4>{props.dish.name}</h4>
                   <iframe
-                    width="420"
-                    height="315"
+                    width="620"
+                    height="200"
                     src={`${link}?autoplay=1`}
                     frameborder="0"
                     allowfullscreen
@@ -103,6 +106,14 @@ export default function DishIcon(props) {
                       //   }
                     })}
                   } */}
+                  <h5>Ingredients</h5>
+                  {props.dish.ing.map(step => {
+                    //console.log("boo2", dish.nut);
+
+                    // console.log(step, "boovoo");
+                    return <Ingre step={step} key={props.dish.id} />;
+                  })}
+                  ;<h5>Recipe</h5>
                   {Object.keys(props.dish.steps).map((step, i) => (
                     <Recipe
                       step={step}
@@ -111,12 +122,24 @@ export default function DishIcon(props) {
                       link={props.dish.link}
                     />
                   ))}
-                  <a href="https://www.swiggy.com/" target="_blank">
-                    {" "}
-                    <button className="waves-effect btn">
-                      Get this on Swiggy!
-                    </button>
-                  </a>
+                  <div>
+                    <a href="https://www.swiggy.com/" target="_blank">
+                      {" "}
+                      <button className="waves-effect btn">
+                        Get this on Swiggy!
+                      </button>
+                    </a>
+                    <a href="https://www.zomato.com/" target="_blank">
+                      <button className="waves-effect btn">
+                        Get this on Zomato!
+                      </button>
+                    </a>
+                    <a href="https://www.ubereats.com/" target="_blank">
+                      <button className="waves-effect btn">
+                        Get this on UberEats!
+                      </button>
+                    </a>
+                  </div>
                 </div>
               </Popup>
             </div>
