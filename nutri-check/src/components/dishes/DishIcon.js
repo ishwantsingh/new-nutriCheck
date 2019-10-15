@@ -22,6 +22,13 @@ const StyledDiv = styled.div`
       .card {
         width: 100%;
         height: 25rem;
+        .img-1 {
+          height: 17rem;
+        }
+        .img-2 {
+          height: 13rem;
+          padding-right: 2rem;
+        }
         a {
           margin: 0 10px;
         }
@@ -66,7 +73,8 @@ export default function DishIcon(props) {
           <div className="col s12 m6 dish-card-div">
             <div className="card">
               <div className="card-image">
-                <img src={sampleFood} />
+                {console.log(props.dish.image)}
+                <img src={props.dish.image} className="img-1" />
               </div>
               <div className="card-content">
                 <p>{props.dish.name}</p>
@@ -79,9 +87,10 @@ export default function DishIcon(props) {
                 <div>
                   {console.log(props.dish.link)}
                   <h5>{props.dish.name}</h5>
+                  <img src={props.dish.image} className="img-2" />
                   <iframe
-                    width="620"
-                    height="200"
+                    width="380"
+                    height="180"
                     src={`${props.dish.link}`}
                     frameborder="0"
                     allowfullscreen
@@ -90,7 +99,7 @@ export default function DishIcon(props) {
                   {props.dish.ing.map(step => {
                     return <Ingre step={step} key={props.dish.id} />;
                   })}
-                  ;<h5>Recipe</h5>
+                  <h5>Recipe</h5>
                   {Object.keys(props.dish.steps).map((step, i) => (
                     <Recipe
                       step={step}
