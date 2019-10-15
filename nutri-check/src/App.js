@@ -30,7 +30,6 @@ class App extends React.Component {
         </div>
         <div>
           <Route
-            exact
             path="/recipe/:id"
             render={props => <Recipe {...props} dishes={dishes} />}
           />
