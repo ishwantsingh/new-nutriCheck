@@ -5,7 +5,15 @@ import styled from "styled-components";
 
 import DishIcon from "./DishIcon";
 
-const StyledListDiv = styled.div``;
+const StyledListDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  .dish-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
 
 const DishList = props => {
   console.log(props.dishes);
@@ -24,11 +32,13 @@ const DishList = props => {
       <StyledListDiv>
         <div>Dishes</div>
         {/* {func1(props.dishes)} */}
-        {props.dishes &&
-          props.dishes.map(dish => {
-            console.log("boo2", dish.id);
-            return <DishIcon dish={dish} key={dish.id} />;
-          })}
+        <div className="dish-card-container">
+          {props.dishes &&
+            props.dishes.map(dish => {
+              console.log("boo2", dish.id);
+              return <DishIcon dish={dish} key={dish.id} />;
+            })}
+        </div>
       </StyledListDiv>
     );
   } else {

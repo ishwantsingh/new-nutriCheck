@@ -6,10 +6,16 @@ import styled from "styled-components";
 import sampleFood from "../../images/sample-food.jpg";
 
 const StyledDiv = styled.div`
-  width: 100%;
+  display: flex;
+  width: 30%;
   height: 100%;
-  border: 1px solid black;
+  margin: 0 auto;
   padding: 10px;
+  .dish-card {
+    .dish-card-div {
+      width: 100%;
+    }
+  }
 `;
 
 export default function DishIcon(props) {
@@ -17,8 +23,8 @@ export default function DishIcon(props) {
     <StyledDiv>
       {/* {console.log("boo3", props)} */}
 
-      <div class="row">
-        <div class="col s12 m6">
+      <div class="row dish-card">
+        <div class="col s12 m6 dish-card-div">
           <div class="card">
             <div class="card-image">
               <img src={sampleFood} />
