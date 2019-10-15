@@ -58,16 +58,10 @@ export default function DishIcon(props) {
   }
   // console.log(props.dish.nut, props.nutCheck);
   if (isEquivalent(props.dish.nut, props.nutCheck)) {
-    var link = props.dish.link;
     return (
       <StyledDiv>
-        {/* {console.log("boo3", props)} */}
+        {console.log("boo3", props)}
 
-        {/* <Link
-          to={"/recipe/" + props.dish.id}
-          key={props.dish.id}
-          className="container"
-        > */}
         <div className="row dish-card">
           <div className="col s12 m6 dish-card-div">
             <div className="card">
@@ -79,38 +73,21 @@ export default function DishIcon(props) {
               </div>
               <Popup
                 trigger={<button> More Info!</button>}
-                // position="right center"
                 modal
                 closeOnDocumentClick
               >
                 <div>
-                  {console.log(link)}
-                  <h4>{props.dish.name}</h4>
+                  {console.log(props.dish.link)}
+                  <h5>{props.dish.name}</h5>
                   <iframe
                     width="620"
                     height="200"
-                    src={`${link}?autoplay=1`}
+                    src={`${props.dish.link}`}
                     frameborder="0"
                     allowfullscreen
                   ></iframe>
-                  {/* <p>{props.dish.name}</p> */}
-                  {/* {console.log(props.dish.steps)} */}
-                  {/* {props.dish.steps &&
-                    props.dish.steps.map(step => {
-                      //  console.log("boo2", dish.nut);
-                      //   if (dish.nut === props.nutCheck) {
-                      console.log(step, "boovoo");
-                      return <Recipe step={step} key={props.dish.id} />;
-                      //   } else {
-                      //     return <h4>No Maches Found</h4>;
-                      //   }
-                    })}
-                  } */}
                   <h5>Ingredients</h5>
                   {props.dish.ing.map(step => {
-                    //console.log("boo2", dish.nut);
-
-                    // console.log(step, "boovoo");
                     return <Ingre step={step} key={props.dish.id} />;
                   })}
                   ;<h5>Recipe</h5>
@@ -122,6 +99,7 @@ export default function DishIcon(props) {
                       link={props.dish.link}
                     />
                   ))}
+                  <h5>Suggested Drink: {props.dish.drink}</h5>
                   <div>
                     <a href="https://www.swiggy.com/" target="_blank">
                       {" "}
@@ -145,10 +123,6 @@ export default function DishIcon(props) {
             </div>
           </div>
         </div>
-        {/* </Link> */}
-        {/* <div>{props.dish.name}</div> */}
-        {/* <div>{props.dish.steps}</div> */}
-        {/* <div>{props.dish.ing}</div> */}
       </StyledDiv>
     );
   } else return <div></div>;
@@ -165,3 +139,36 @@ export default function DishIcon(props) {
 //     null,
 //     mapDispatchToProps
 //   )(PostList);
+
+{
+  /* </Link> */
+}
+{
+  /* <div>{props.dish.name}</div> */
+}
+{
+  /* <div>{props.dish.steps}</div> */
+}
+{
+  /* <div>{props.dish.ing}</div> */
+}
+
+{
+  /* <p>{props.dish.name}</p> */
+}
+{
+  /* {console.log(props.dish.steps)} */
+}
+{
+  /* {props.dish.steps &&
+                    props.dish.steps.map(step => {
+                      //  console.log("boo2", dish.nut);
+                      //   if (dish.nut === props.nutCheck) {
+                      console.log(step, "boovoo");
+                      return <Recipe step={step} key={props.dish.id} />;
+                      //   } else {
+                      //     return <h4>No Maches Found</h4>;
+                      //   }
+                    })}
+                  } */
+}
