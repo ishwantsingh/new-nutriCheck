@@ -72,27 +72,27 @@ class Options extends React.Component {
       this.state.mineral,
       this.state.protein
     );
-    this.setState({
-      // cal: "Low",
-      // carb: "Low",
-      // fat: "Low",
-      // fiber: "Low",
-      // mineral: "Low",
-      // protein: "Low"
-      cal: "Low",
-      carb: "Low",
-      fat: "Low",
-      fiber: "Low",
-      mineral: "Low",
-      protein: "Low"
-    });
+    // this.setState({
+    //   // cal: "Low",
+    //   // carb: "Low",
+    //   // fat: "Low",
+    //   // fiber: "Low",
+    //   // mineral: "Low",
+    //   // protein: "Low"
+    //   cal: "Low",
+    //   carb: "Low",
+    //   fat: "Low",
+    //   fiber: "Low",
+    //   mineral: "Low",
+    //   protein: "Low"
+    // });
     console.log("booooo", this.state);
   };
 
-  reset = () => {
-    //console.log(document.getElementById("reset-but"));
-    document.getElementById("reset-but").click();
-  };
+  // reset = () => {
+  //   //console.log(document.getElementById("reset-but"));
+  //   document.getElementById("reset-but").click();
+  // };
 
   render() {
     return (
@@ -144,9 +144,10 @@ class Options extends React.Component {
             <Switch id={"protein"} name={"Protein"} func={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="waves-effect btn" onClick={this.reset}>
+            {/* <button className="waves-effect btn" onClick={this.reset}>
               Show Info
-            </button>
+            </button> */}
+            <button className="waves-effect btn">Show Info</button>
             <br />
             <button type="reset" id="reset-but" />
           </div>
