@@ -17,6 +17,7 @@ const Form = styled.form`
   height: 100%;
   display: flex;
   justify-content: space-around;
+  margin 5rem 10%;
   #reset-but {
     opacity: 0;
   }

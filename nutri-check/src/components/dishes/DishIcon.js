@@ -7,13 +7,19 @@ import sampleFood from "../../images/sample-food.jpg";
 
 const StyledDiv = styled.div`
   display: flex;
-  width: 30%;
+  width: 25%;
   height: 100%;
+
   margin: 0 auto;
   padding: 10px;
   .dish-card {
     .dish-card-div {
       width: 100%;
+      height: 20rem;
+      .card {
+        width: 100%;
+        height: 20rem;
+      }
     }
   }
 `;
@@ -23,13 +29,13 @@ export default function DishIcon(props) {
     <StyledDiv>
       {/* {console.log("boo3", props)} */}
 
-      <div class="row dish-card">
-        <div class="col s12 m6 dish-card-div">
-          <div class="card">
-            <div class="card-image">
+      <div className="row dish-card">
+        <div className="col s12 m6 dish-card-div">
+          <div className="card">
+            <div className="card-image">
               <img src={sampleFood} />
             </div>
-            <div class="card-content">
+            <div className="card-content">
               <p>{props.dish.name}</p>
             </div>
           </div>

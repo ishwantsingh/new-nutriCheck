@@ -8,10 +8,13 @@ import DishIcon from "./DishIcon";
 const StyledListDiv = styled.div`
   display: flex;
   flex-direction: column;
+  margin 0 8%;
+    text-align: center;
   .dish-card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin 0 8%;
   }
 `;
 
@@ -30,7 +33,7 @@ const DishList = props => {
   if (props.dishes) {
     return (
       <StyledListDiv>
-        <div>Dishes</div>
+        <h2>Dishes</h2>
         {/* {func1(props.dishes)} */}
         <div className="dish-card-container">
           {props.dishes &&
