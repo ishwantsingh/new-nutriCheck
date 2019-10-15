@@ -15,7 +15,7 @@ function Switch(props) {
       <label>
         Low
         <input type="checkbox" id={props.id} onChange={props.func} />
-        {console.log(props.id)}
+        {/* {console.log(props.id)} */}
         <span className="lever"></span>
         High
       </label>

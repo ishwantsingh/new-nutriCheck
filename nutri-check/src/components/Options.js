@@ -86,7 +86,7 @@ class Options extends React.Component {
     //   mineral: "Low",
     //   protein: "Low"
     // });
-    console.log("booooo", this.state);
+    //  console.log("booooo", this.state);
   };
 
   // reset = () => {

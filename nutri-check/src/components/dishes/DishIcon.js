@@ -25,28 +25,56 @@ const StyledDiv = styled.div`
 `;
 
 export default function DishIcon(props) {
-  return (
-    <StyledDiv>
-      {/* {console.log("boo3", props)} */}
+  function isEquivalent(a, b) {
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
 
-      <div className="row dish-card">
-        <div className="col s12 m6 dish-card-div">
-          <div className="card">
-            <div className="card-image">
-              <img src={sampleFood} />
-            </div>
-            <div className="card-content">
-              <p>{props.dish.name}</p>
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length != bProps.length) {
+      return false;
+    }
+
+    for (var i = 0; i < aProps.length; i++) {
+      var propName = aProps[i];
+
+      // If values of same property are not equal,
+      // objects are not equivalent
+      if (a[propName] !== b[propName]) {
+        return false;
+      }
+    }
+
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
+  }
+  console.log(props.dish.nut, props.nutCheck);
+  if (isEquivalent(props.dish.nut, props.nutCheck)) {
+    return (
+      <StyledDiv>
+        {/* {console.log("boo3", props)} */}
+
+        <div className="row dish-card">
+          <div className="col s12 m6 dish-card-div">
+            <div className="card">
+              <div className="card-image">
+                <img src={sampleFood} />
+              </div>
+              <div className="card-content">
+                <p>{props.dish.name}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* <div>{props.dish.name}</div> */}
-      {/* <div>{props.dish.steps}</div> */}
-      {/* <div>{props.dish.ing}</div> */}
-    </StyledDiv>
-  );
+        {/* <div>{props.dish.name}</div> */}
+        {/* <div>{props.dish.steps}</div> */}
+        {/* <div>{props.dish.ing}</div> */}
+      </StyledDiv>
+    );
+  } else return <div></div>;
 }
 
 // const mapDispatchToProps = dispatch => {
