@@ -37,6 +37,7 @@ const DishList = props => {
         {/* {func1(props.dishes)} */}
         <div className="dish-card-container">
           {props.dishes &&
+            props.dishes.nut === props.nutCheck &&
             props.dishes.map(dish => {
               console.log("boo2", dish.nut);
               //   if (dish.nut === props.nutCheck) {
@@ -71,7 +72,7 @@ const DishList = props => {
 // }
 
 const mapStateToProps = state => {
-  console.log(state.reducers);
+  // console.log(state.reducers);
   return {
     nutCheck: state.reducers
   };

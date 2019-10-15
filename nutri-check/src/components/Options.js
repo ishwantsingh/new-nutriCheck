@@ -25,6 +25,12 @@ const Form = styled.form`
 
 class Options extends React.Component {
   state = {
+    // cal: "Low",
+    // carb: "Low",
+    // fat: "Low",
+    // fiber: "Low",
+    // mineral: "Low",
+    // protein: "Low"
     cal: "Low",
     carb: "Low",
     fat: "Low",
@@ -51,15 +57,28 @@ class Options extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log("b", this.state);
     this.props.getInfo(
+      // this.state.cal,
+      // this.state.carb,
+      // this.state.fat,
+      // this.state.fiber,
+      // this.state.mineral,
+      // this.state.protein
+      this.state.cal,
+      this.state.carb,
       this.state.fat,
       this.state.fiber,
-      this.state.protein,
-      this.state.carbohydrate,
       this.state.mineral,
-      this.state.calorie
+      this.state.protein
     );
     this.setState({
+      // cal: "Low",
+      // carb: "Low",
+      // fat: "Low",
+      // fiber: "Low",
+      // mineral: "Low",
+      // protein: "Low"
       cal: "Low",
       carb: "Low",
       fat: "Low",
@@ -78,50 +97,13 @@ class Options extends React.Component {
   render() {
     return (
       <StyledContainer>
-        {/* <Form onSubmit={this.handleSubmit}>
-            <div className="form-section">
-              <div className="input-sect">
-                <h5>Select Starting Point</h5>
-                <div className="input-field">
-                  <label htmlFor="type">
-                    <input
-                      ref={this.startRef}
-                      list="types"
-                      name="myType"
-                      type="text"
-                      id="start"
-                      placeholder="Select Station:"
-                      onChange={this.handleChange}
-                    />
-                  </label>
-                  <Dropdown />
-                </div>
-              </div>
-              <div className="input-sect">
-                <h5>Select Destination</h5>
-                <div className="input-field">
-                  <label htmlFor="type">
-                    <input
-                      ref={this.endRef}
-                      list="types"
-                      name="myType"
-                      type="text"
-                      id="end"
-                      placeholder="Select Station:"
-                    />
-                  </label>
-                  <Dropdown />
-                </div>
-              </div>
-            </div>
-      
-            <div className="input-field">
-              <button className="waves-effect btn">Show Info</button>
-            </div>
-          </Form> */}
         <Form onSubmit={this.handleSubmit}>
-          <div>
+          {/* <div>
             <Switch id={"cal"} name={"Calorie"} func={this.handleChange} />
+
+          </div> */}
+          {/* <div>
+            <Switch id={"cal"} name={"Cal"} func={this.handleChange} />
           </div>
           <div>
             <Switch
@@ -142,8 +124,25 @@ class Options extends React.Component {
 
           <div>
             <Switch id={"protein"} name={"Protein"} func={this.handleChange} />
+          </div> */}
+          <div>
+            <Switch id={"cal"} name={"Cal"} func={this.handleChange} />
           </div>
-
+          <div>
+            <Switch id={"carb"} name={"Carb"} func={this.handleChange} />
+          </div>{" "}
+          <div>
+            <Switch id={"fat"} name={"Fat"} func={this.handleChange} />
+          </div>{" "}
+          <div>
+            <Switch id={"fiber"} name={"Fiber"} func={this.handleChange} />
+          </div>{" "}
+          <div>
+            <Switch id={"mineral"} name={"Mineral"} func={this.handleChange} />
+          </div>{" "}
+          <div>
+            <Switch id={"protein"} name={"Protein"} func={this.handleChange} />
+          </div>
           <div className="input-field">
             <button className="waves-effect btn" onClick={this.reset}>
               Show Info
@@ -159,6 +158,8 @@ class Options extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
+    // getInfo: (cal, carb, fat, fiber, mineral, protein) =>
+    //   dispatch(getInfo(cal, carb, fat, fiber, mineral, protein))
     getInfo: (cal, carb, fat, fiber, mineral, protein) =>
       dispatch(getInfo(cal, carb, fat, fiber, mineral, protein))
   };
