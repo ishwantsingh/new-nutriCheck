@@ -25,23 +25,23 @@ const Form = styled.form`
 
 class Options extends React.Component {
   state = {
-    fat: "low",
-    mineral: "low",
-    fiber: "low",
-    protein: "low",
-    carbohydrate: "low",
-    calorie: "low"
+    cal: "Low",
+    carb: "Low",
+    fat: "Low",
+    fiber: "Low",
+    mineral: "Low",
+    protein: "Low"
   };
   handleChange = e => {
     // console.log("boo", e.target.id);
     // console.log(`${e.target.id}`, this.state[e.target.id]);
     // console.log(document.writeln(this.state.fat));
-    this.state[e.target.id] === "low"
+    this.state[e.target.id] === "Low"
       ? this.setState({
-          [e.target.id]: "high"
+          [e.target.id]: "High"
         })
       : this.setState({
-          [e.target.id]: "low"
+          [e.target.id]: "Low"
         });
 
     // this.setState({ [e.target.id]: "high" });
@@ -60,12 +60,12 @@ class Options extends React.Component {
       this.state.calorie
     );
     this.setState({
-      fiber: "low",
-      fat: "low",
-      carbohydrate: "low",
-      protein: "low",
-      mineral: "low",
-      calorie: "low"
+      cal: "Low",
+      carb: "Low",
+      fat: "Low",
+      fiber: "Low",
+      mineral: "Low",
+      protein: "Low"
     });
     console.log("booooo", this.state);
   };
@@ -121,27 +121,29 @@ class Options extends React.Component {
           </Form> */}
         <Form onSubmit={this.handleSubmit}>
           <div>
-            <Switch id={"fat"} name={"Fat"} func={this.handleChange} />
-          </div>
-          <div>
-            <Switch id={"mineral"} name={"Mineral"} func={this.handleChange} />
-          </div>
-          <div>
-            <Switch id={"fiber"} name={"Fiber"} func={this.handleChange} />
-          </div>
-          <div>
-            <Switch id={"protein"} name={"Protein"} func={this.handleChange} />
+            <Switch id={"cal"} name={"Calorie"} func={this.handleChange} />
           </div>
           <div>
             <Switch
-              id={"carbohydrate"}
+              id={"carb"}
               name={"Carbohydrate"}
               func={this.handleChange}
             />
           </div>
           <div>
-            <Switch id={"calorie"} name={"Calorie"} func={this.handleChange} />
+            <Switch id={"fat"} name={"Fat"} func={this.handleChange} />
           </div>
+          <div>
+            <Switch id={"fiber"} name={"Fiber"} func={this.handleChange} />
+          </div>
+          <div>
+            <Switch id={"mineral"} name={"Mineral"} func={this.handleChange} />
+          </div>
+
+          <div>
+            <Switch id={"protein"} name={"Protein"} func={this.handleChange} />
+          </div>
+
           <div className="input-field">
             <button className="waves-effect btn" onClick={this.reset}>
               Show Info
@@ -157,8 +159,8 @@ class Options extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getInfo: (fat, fiber, protein, carbohydrate, mineral, calorie) =>
-      dispatch(getInfo(fat, fiber, protein, carbohydrate, mineral, calorie))
+    getInfo: (cal, carb, fat, fiber, mineral, protein) =>
+      dispatch(getInfo(cal, carb, fat, fiber, mineral, protein))
   };
 };
 

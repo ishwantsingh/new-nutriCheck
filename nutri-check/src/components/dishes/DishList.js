@@ -19,7 +19,7 @@ const StyledListDiv = styled.div`
 `;
 
 const DishList = props => {
-  console.log(props.dishes);
+  //  console.log(props.dishes);
 
   //   function func1(dishes) {
   //     console.log("boo");
@@ -38,8 +38,12 @@ const DishList = props => {
         <div className="dish-card-container">
           {props.dishes &&
             props.dishes.map(dish => {
-              console.log("boo2", dish.id);
+              console.log("boo2", dish.nut);
+              //   if (dish.nut === props.nutCheck) {
               return <DishIcon dish={dish} key={dish.id} />;
+              //   } else {
+              //     return <h4>No Maches Found</h4>;
+              //   }
             })}
         </div>
       </StyledListDiv>
@@ -66,4 +70,13 @@ const DishList = props => {
 //   return { dishes: state.dishes, auth: state.firebase.auth };
 // }
 
-export default DishList;
+const mapStateToProps = state => {
+  console.log(state.reducers);
+  return {
+    nutCheck: state.reducers
+  };
+};
+export default connect(
+  mapStateToProps,
+  null
+)(DishList);

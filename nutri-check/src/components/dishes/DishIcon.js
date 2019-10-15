@@ -7,7 +7,7 @@ import sampleFood from "../../images/sample-food.jpg";
 
 const StyledDiv = styled.div`
   display: flex;
-  width: 25%;
+  width: 30%;
   height: 100%;
 
   margin: 0 auto;

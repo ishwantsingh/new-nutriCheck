@@ -1,10 +1,10 @@
 const initialState = {
-  fat: "low",
-  fiber: "low",
-  protein: "low",
-  carbohydrate: "low",
-  mineral: "low",
-  calorie: "low"
+  cal: "Low",
+  carb: "Low",
+  fat: "Low",
+  fiber: "Low",
+  mineral: "Low",
+  protein: "Low"
 };
 
 export default function recipeReducer(state = initialState, action) {
@@ -12,12 +12,12 @@ export default function recipeReducer(state = initialState, action) {
     case "GET_INFO":
       return {
         ...state,
+        cal: action.payload.cal,
+        carb: action.payload.carb,
         fat: action.payload.fat,
         fiber: action.payload.fiber,
-        protein: action.payload.protein,
-        carbohydrate: action.payload.carbohydrate,
         mineral: action.payload.mineral,
-        calorie: action.payload.calorie
+        protein: action.payload.protein
       };
     default:
       return state;

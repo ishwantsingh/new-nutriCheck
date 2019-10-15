@@ -1,13 +1,13 @@
-const getInfo = (fat, fiber, protein, carbohydrate, mineral, calorie) => {
+const getInfo = (cal, carb, fat, fiber, mineral, protein) => {
   return {
     type: "GET_INFO",
     payload: {
+      cal,
+      carb,
       fat,
       fiber,
-      protein,
-      carbohydrate,
       mineral,
-      calorie
+      protein
     }
   };
 };
