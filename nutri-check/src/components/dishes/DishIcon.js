@@ -3,6 +3,8 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
+import sampleFood from "../../images/sample-food.jpg";
+
 const StyledDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -13,9 +15,22 @@ const StyledDiv = styled.div`
 export default function DishIcon(props) {
   return (
     <StyledDiv>
-      {console.log("boo3", props)}
+      {/* {console.log("boo3", props)} */}
 
-      <div>{props.dish.name}</div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src={sampleFood} />
+            </div>
+            <div class="card-content">
+              <p>{props.dish.name}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div>{props.dish.name}</div> */}
       {/* <div>{props.dish.steps}</div> */}
       {/* <div>{props.dish.ing}</div> */}
     </StyledDiv>
