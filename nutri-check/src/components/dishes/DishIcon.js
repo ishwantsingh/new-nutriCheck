@@ -24,7 +24,9 @@ const StyledDiv = styled.div`
         height: 25rem;
         .container-all {
           margin: 0 8rem;
-          overflow: scroll;
+          overflow: auto;
+          height: 90vh;
+          width: 75%;
         }
         .img-1 {
           height: 17rem;
