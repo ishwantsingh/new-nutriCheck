@@ -1,9 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import sampleFood from "../../images/sample-food.jpg";
 import Popup from "reactjs-popup";
 import Recipe from "./Recipe";
 import Ingre from "./Ingre";
@@ -22,11 +19,25 @@ const StyledDiv = styled.div`
       .card {
         width: 100%;
         height: 25rem;
+        .container-all-1 {
+          overflow: hidden;
+        }
         .container-all {
           margin: 0 8rem;
-          overflow: auto;
+          overflow-y: auto;
           height: 90vh;
           width: 75%;
+        }
+        .container-all::-webkit-scrollbar {
+          width: 11.5px;
+        }
+        .container-all::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey;
+          border-radius: 4px;
+        }
+        .container-all::-webkit-scrollbar-thumb {
+          background: #9e9e9e;
+          border-radius: 10px;
         }
         .img-1 {
           height: 17rem;
@@ -89,7 +100,9 @@ export default function DishIcon(props) {
                 trigger={<button> More Info!</button>}
                 modal
                 closeOnDocumentClick
+                className="container-all-1"
               >
+                <br />
                 <div className="container-all">
                   {console.log(props.dish.link)}
                   <h5>{props.dish.name}</h5>
@@ -133,6 +146,8 @@ export default function DishIcon(props) {
                       </button>
                     </a>
                   </div>
+                  <br />
+                  <br />
                 </div>
               </Popup>
             </div>

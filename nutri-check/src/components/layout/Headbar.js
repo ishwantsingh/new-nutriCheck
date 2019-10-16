@@ -12,14 +12,14 @@ import SignedOutLinks from "./SignedOutLinks";
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
   height: 53px;
   background-color: #764abc;
+  padding: 0 6%;
+  margin: 0 auto;
   a {
-    margin-right: 3%;
-    margin-left: 5.8%;
     text-decoration: none;
   }
   .logo {
@@ -37,8 +37,6 @@ const StyledDiv = styled.div`
   .link-container {
     display: flex;
     flex-direction: row-reverse;
-    width: 30%;
-    flex-grow: 1;
     margin-right: 0;
   }
 `;

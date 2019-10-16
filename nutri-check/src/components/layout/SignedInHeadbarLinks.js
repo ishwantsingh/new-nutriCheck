@@ -8,10 +8,9 @@ import { logout } from "../../state/actions/authAction.js";
 const StyledHeadDiv = styled.div`
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 20%;
   height: 100%;
   justify-content: flex-end;
-  margin: 0 3% 3px 0;
   a {
     margin-top: 0 !important;
   }
@@ -20,9 +19,7 @@ const StyledHeadDiv = styled.div`
   }
   .link-container {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
-    flex-grow: 1;
+    justify-content: space-between;
     margin-right: 0;
     align-items: center;
   }
@@ -33,24 +30,16 @@ const StyledUserImg = styled.img`
   border-radius: 50%;
   height: 45px;
   width: 45px;
+  margin-left: -50%;
 `;
 
 const StyledLogoutBut = styled.button`
-  width: 25%;
   background-color: white;
   color: #009688;
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.92rem;
-`;
-const StyledBut = styled.button`
   width: 100%;
-  background-color: white;
-  color: #009688;
-  border-radius: 3px;
-  font-weight: bold;
-  font-size: 0.92rem;
-  padding: 0 1px;
 `;
 
 function SignedInHeadbarLinks(props) {
@@ -67,9 +56,6 @@ function SignedInHeadbarLinks(props) {
         <StyledLogoutBut onClick={props.logout} className="waves-effect btn">
           Log Out
         </StyledLogoutBut>
-        <Link to="/metro" className="links">
-          <StyledBut className="waves-effect btn"> Calculate </StyledBut>
-        </Link>
         {/* <Link to="/about" className="links">
           <StyledBut className="waves-effect btn"> About </StyledBut>
         </Link> */}
