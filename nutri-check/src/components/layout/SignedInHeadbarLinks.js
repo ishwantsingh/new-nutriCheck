@@ -39,7 +39,7 @@ const StyledLogoutBut = styled.button`
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.92rem;
-  width: 100%;
+  width: 8rem;
 `;
 
 function SignedInHeadbarLinks(props) {
