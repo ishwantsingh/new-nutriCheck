@@ -35,10 +35,12 @@ const StyledDiv = styled.div`
             overflow: hidden;
           }
           .container-all {
-            width: 100%;
-            margin: 0 auto;
+            padding: 0;
+            width: 100% !important;
+            margin: 0 !important;
             overflow-y: auto;
             height: 90vh;
+            overflow-x: hidden;
           }
           .container-all::-webkit-scrollbar {
             width: 5px;
