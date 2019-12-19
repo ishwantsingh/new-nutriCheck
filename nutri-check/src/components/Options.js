@@ -10,6 +10,10 @@ const StyledContainer = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 `;
 
 const Form = styled.form`
@@ -20,6 +24,11 @@ const Form = styled.form`
   margin: 5rem 10%;
   #reset-but {
     opacity: 0;
+  }
+  @media (max-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5rem auto;
   }
 `;
 
