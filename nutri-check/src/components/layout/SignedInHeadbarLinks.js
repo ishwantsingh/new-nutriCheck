@@ -34,6 +34,7 @@ const StyledUserImg = styled.img`
 `;
 
 const StyledLogoutBut = styled.button`
+display: none;
   background-color: white;
   color: #009688;
   border-radius: 3px;

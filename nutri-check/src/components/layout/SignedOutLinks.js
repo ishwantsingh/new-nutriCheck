@@ -12,6 +12,7 @@ const StyledOutNav = styled.div`
   text-align: left;
 `;
 const StyledLoginBut = styled.button`
+display: none;
   width: 215px;
   margin-right: 30px;
   background-color: white;
