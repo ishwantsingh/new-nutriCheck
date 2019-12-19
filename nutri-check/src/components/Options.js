@@ -7,7 +7,7 @@ import getInfo from "../state/actions/actionCreators";
 
 const StyledContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
@@ -21,14 +21,14 @@ const Form = styled.form`
   height: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 5rem 10%;
+  margin: 3rem 10%;
   #reset-but {
     opacity: 0;
   }
   @media (max-width: 600px) {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 5rem auto;
+    margin: 1rem auto;
   }
 `;
 

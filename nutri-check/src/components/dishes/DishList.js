@@ -9,12 +9,25 @@ const StyledListDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin 0 8%;
-    text-align: center;
+  text-align: center;
+  h2 {
+    margin-top: 0;
+  }
   .dish-card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin 0 8%;
+  }
+  @media (max-width: 600px) {
+    margin 0 auto;
+    width: 90%;
+    .dish-card-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin 0;
+    }
   }
 `;
 

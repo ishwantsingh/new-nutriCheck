@@ -5,7 +5,7 @@ const StyledContainer = styled.div`
   border: 2px solid #764abc;
   border-radius: 8px;
   padding: 5px 20px;
-  margin: 0 auto;
+  margin: 0.4rem auto;
   width: 100%;
 `;
 function Switch(props) {

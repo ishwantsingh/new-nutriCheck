@@ -9,9 +9,63 @@ const StyledDiv = styled.div`
   display: flex;
   width: 30%;
   height: 100%;
-
   margin: 0 auto;
   padding: 10px;
+  @media (max-width: 600px) {
+    width: 100%;
+    .dish-card {
+      justify-content: center;
+      margin-right: 0rem;
+
+      .dish-card-div {
+        width: 100%;
+        height: 20rem;
+      margin-right: 0rem;
+      padding: 0rem;
+        .card {
+          width: 100%;
+          height: 15rem;
+          .container-all-1 {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+          }
+          .container-all-1-content {
+            width: 90% !important;
+            overflow: hidden;
+          }
+          .container-all {
+            width: 100%;
+            margin: 0 auto;
+            overflow-y: auto;
+            height: 90vh;
+          }
+          .container-all::-webkit-scrollbar {
+            width: 5px;
+          }
+          .container-all::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 1px;
+          }
+          .container-all::-webkit-scrollbar-thumb {
+            background: #9e9e9e;
+            border-radius: 3px;
+          }
+          .img-1 {
+            height: 8rem;
+            width: 100%;
+          }
+          .img-2 {
+            height: 5rem;
+            padding-right: 0rem;
+          }
+          a {
+            margin: 0 2px;
+          }
+        }
+      }
+    }
+  }
   .dish-card {
     .dish-card-div {
       width: 100%;
@@ -26,7 +80,7 @@ const StyledDiv = styled.div`
           margin: 0 8rem;
           overflow-y: auto;
           height: 90vh;
-          width: 75%;
+          width: 600px;
         }
         .container-all::-webkit-scrollbar {
           width: 11.5px;
